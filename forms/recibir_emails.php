@@ -57,7 +57,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
         $mail->Body    = "Nombre: $nombre<br>Email: $email<br>Mensaje: $mensaje";
 
         $mail->send();
-        echo "<script>alert('¡Hola! Gracias por contactarte conmigo. Te responderé pronto!');</script>";
         header("Location: ../index.php#contact");
         exit; 
     } catch (Exception $e) {

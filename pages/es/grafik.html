@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grafik - Marketing, web y seo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-gap: 20px;
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        /* Estilos para la ventana modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.9);
+        }
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: auto;
+            max-width: 90%;
+            max-height: 90%;
+        }
+        .close {
+            color: white;
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            font-size: 35px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+        }
+        .back-to-portfolio {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 9999;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .back-to-portfolio:hover {
+            background-color: #0056b3;
+        }
+        /* Controles de navegación */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -50px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            -webkit-user-select: none;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        .prev {
+            left: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Botón para volver al portafolio -->
+<div class="back-to-portfolio" data-aos="fade-up" onclick="goToPortfolio()">Volver al Portafolio</div><br><br>
+
+<div class="container">
+    <h1>Grafik - Marketing, web y seo</h1>
+    <p>Grafik es una agencia digital especializada en estrategias de marketing, diseño web y optimización de motores de búsqueda (SEO). Nuestro enfoque centrado en el cliente y nuestra experiencia en marketing digital nos permiten ofrecer soluciones creativas y efectivas para impulsar la presencia en línea de nuestros clientes y maximizar su éxito en el mundo digital.</p>
+    <h3>Link a la app: <a href="https://grafik-iscp.netlify.app/" target="_blank">ACÁ</a></h3>
+    <div class="gallery">
+        <img src="../../assets/img/portfolio/grafik/grafik 2.png" alt="Imagen 1" onclick="openModal(this)">
+        <img src="../../assets/img/portfolio/grafik/grafik 3.png" alt="Imagen 2" onclick="openModal(this)">
+        <img src="../../assets/img/portfolio/grafik/grafik 4.png" alt="Imagen 3" onclick="openModal(this)">
+        <img src="../../assets/img/portfolio/grafik/grafik 5.png" alt="Imagen 4" onclick="openModal(this)">
+    </div>
+</div>
+
+
+
+<!-- La ventana modal -->
+<div id="myModal" class="modal">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <span class="prev" onclick="plusSlides(-1)">&#10094;</span>
+  <span class="next" onclick="plusSlides(1)">&#10095;</span>
+  <img class="modal-content" id="modalImg">
+</div>
+
+<script>
+// Variables globales
+var slideIndex = 1;
+
+// Función para abrir la ventana modal con la imagen seleccionada
+function openModal(img) {
+    var modal = document.getElementById("myModal");
+    var modalImg = document.getElementById("modalImg");
+    modal.style.display = "block";
+    modalImg.src = img.src;
+    slideIndex = Array.from(img.parentNode.children).indexOf(img) + 1;
+}
+
+// Función para cerrar la ventana modal
+function closeModal() {
+    var modal = document.getElementById("myModal");
+    modal.style.display = "none";
+}
+
+// Función para avanzar o retroceder entre las imágenes
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+
+// Función para mostrar la imagen actual
+function showSlides(n) {
+    var modalImg = document.getElementById("modalImg");
+    var gallery = document.getElementsByClassName("gallery")[0].getElementsByTagName("img");
+    if (n > gallery.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = gallery.length }
+    modalImg.src = gallery[slideIndex - 1].src;
+}
+
+// Función para ir al portafolio
+function goToPortfolio() {
+    // Cambia esta URL por la del portafolio
+    window.location.href = "../../index.php#portfolio";
+}
+</script>
+
+</body>
+</html>

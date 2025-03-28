@@ -1,3 +1,8 @@
+<?php
+header('Content-Type: text/html; charset=utf-8');
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -39,48 +44,39 @@
   <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
 
   <!-- ======= Header  ======= -->
-  <?php include("assets/components/header.html") ?>
+  <?php include "assets/es_componentes/header.html" ?>
 
 
   <!-- ======= Hero  ======= -->
-  <?php include("assets/components/hero.html") ?>
+  <?php include "assets/es_componentes/hero.html" ?>
 
 
   <!-- ======= Main Sections ======= -->
   <main id="main">
 
     <!-- ======= About Section ======= -->
-    <?php include("assets/components/about.html") ?>
+    <?php include "assets/es_componentes/about.html" ?>
 
     <!-- ======= Skills Section ======= -->
-    <?php include("assets/components/skills.html") ?>
+    <?php include "assets/es_componentes/skills.html" ?>
 
     <!-- ======= Portfolio Section ======= -->
-    <?php include("assets/components/portafolio.html") ?>
+    <?php include "assets/es_componentes/portafolio.html" ?>
 
     <!-- ======= Services Section ======= -->
-    <?php include("assets/components/services.html") ?>
+    <?php include "assets/es_componentes/services.html" ?>
 
     <!-- ======= EdUcation/Experence Section ======= -->
-    <?php include("assets/components/qualification.html") ?>
+    <?php include "assets/es_componentes/qualification.html" ?>
 
     <!-- ======= Contact Section ======= -->
-    <?php include("assets/components/contact.html") ?>
+    <?php include "assets/es_componentes/contact.php" ?>
 
   </main>
 
 
   <!-- ======= Footer ======= -->
-  <footer id="footer">
-    <div class="container">
-      <div class="copyright">
-        &copy; 2024 - <strong><span>Emanuel Paz</span></strong>
-      </div>
-      <div class="credits">
-        Designed by <a href="https://github.com/emanuelpaz05">Emanuel Paz</a>
-      </div>
-    </div>
-  </footer>
+  <?php include("assets/es_componentes/footer.html") ?>
 
   <!-- Flecha arriba-->
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
@@ -98,6 +94,7 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/idioma.js"></script>
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
