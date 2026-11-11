@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Automatización de reportes | Emanuel Paz</title>
+<meta name="description" content="Caso técnico de automatización de reportes comerciales. Proyecto de demostración de Emanuel Paz para el coloquio integrador 2026.">
+<style>
+:root{color-scheme:dark}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#0b111b;color:#ebf0f7;font:16px/1.7 system-ui,-apple-system,Segoe UI,sans-serif}a{color:#81d5bd}main{max-width:1050px;margin:auto;padding:30px 24px 100px}nav{display:flex;gap:18px;justify-content:space-between;align-items:center;flex-wrap:wrap}nav a{font-size:14px;text-decoration:none}.logo{font-weight:850;font-size:25px;color:white}header{padding:92px 0 54px;border-bottom:1px solid #25354a}.eyebrow{color:#7ad8ba;font-size:12px;letter-spacing:2px;font-weight:800}h1{font-size:clamp(34px,6vw,72px);line-height:1.07;letter-spacing:-2px;max-width:850px;margin:20px 0}p.lead{font-size:20px;color:#a3b2c6;max-width:790px}h2{font-size:26px;margin:56px 0 15px}p{color:#b4c1d3}.buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}.button{padding:12px 19px;border-radius:8px;text-decoration:none;border:1px solid #3c5964;color:#e5fff6;font-weight:700;font-size:14px}.primary{background:#70dbb8;color:#0e2525;border-color:#70dbb8}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}.card{background:#141e2b;border:1px solid #26364a;border-radius:13px;padding:24px}.card strong{display:block;font-size:18px}.card p{font-size:14px;margin-bottom:0}.steps{counter-reset:step;padding:0;list-style:none;display:grid;gap:14px}.steps li{counter-increment:step;background:#141e2b;border:1px solid #26364a;border-radius:10px;padding:16px 22px}.steps li:before{content:counter(step,decimal-leading-zero);font-weight:900;color:#70dbb8;margin-right:18px}code,pre{background:#192636;border-radius:5px;padding:3px 7px}pre{padding:20px;overflow:auto;color:#e2f4ec}footer{border-top:1px solid #26364a;margin-top:60px;padding-top:25px;color:#8497ad;font-size:13px}@media(max-width:650px){.grid{grid-template-columns:1fr}header{padding-top:65px}}
+</style>
+</head>
+<body><main>
+<nav><a class="logo" href="https://emanuel-paz-portfolio.vercel.app/">ep.</a><div><a href="https://emanuel-paz-portfolio.vercel.app/">← Portfolio</a> · <a href="https://netgestion.ar/">Net-Gestión</a> · <a href="https://github.com/EmanuelPaz05">GitHub</a></div></nav>
+<header><div class="eyebrow">PROYECTO 02 / AUTOMATIZACIÓN · 2026</div>
+<h1>Reportes comerciales, sin trabajo manual repetitivo.</h1>
+<p class="lead">Demostración académica independiente de un proceso que implementé en Net-Gestión: transformar ventas en un resumen y preparar automáticamente un reporte por correo.</p>
+<div class="buttons"><a class="button primary" href="https://github.com/EmanuelPaz05/NetGestion-Automatizacion-Reportes">Ver código y documentación</a><a class="button" href="https://github.com/EmanuelPaz05/NetGestion-Presentacion">Proyecto principal: Net-Gestión</a></div>
+</header>
+<h2>El problema</h2>
+<p>Revisar ventas, calcular totales y preparar correos a mano consume tiempo y puede generar errores. La automatización permite repetir ese proceso con información estructurada.</p>
+<div class="grid"><div class="card"><strong>Entrada</strong><p>Registros ficticios de ventas en JSON y una fecha seleccionada.</p></div><div class="card"><strong>Proceso</strong><p>Filtrado, validación, suma de importes y armado de plantillas.</p></div><div class="card"><strong>Salida</strong><p>Reporte JSON y HTML, con envío opcional por Resend en entorno de prueba.</p></div></div>
+<h2>Flujo automatizado</h2>
+<ol class="steps"><li>Leer las ventas del día y validar las cantidades.</li><li>Calcular facturación total, operaciones y unidades.</li><li>Generar archivos de reporte en JSON y HTML.</li><li>Mostrar una vista previa local o, con autorización y credenciales de prueba, enviar por Resend.</li></ol>
+<h2>Cómo ejecutarlo</h2>
+<pre>git clone https://github.com/EmanuelPaz05/NetGestion-Automatizacion-Reportes.git
+cd NetGestion-Automatizacion-Reportes
+npm start -- --date=2026-11-11
+npm test</pre>
+<p>La demo se ejecuta con Node.js 18 o superior y datos ficticios; el envío real está desactivado por defecto. No utiliza datos ni código comercial de Net-Gestión.</p>
+<h2>Arquitectura y tecnologías</h2>
+<div class="grid"><div class="card"><strong>Node.js</strong><p>Procesamiento de reportes y ejecución por línea de comandos.</p></div><div class="card"><strong>Resend</strong><p>Integración opcional para pruebas de envío transaccional.</p></div><div class="card"><strong>GitHub Actions</strong><p>Flujo de pruebas y ejecución del ejemplo documentado.</p></div></div>
+<footer>© 2026 Emanuel Paz · Proyecto de demostración independiente · <a href="https://emanuel-paz-portfolio.vercel.app/">Portfolio</a></footer>
+</main></body></html>
