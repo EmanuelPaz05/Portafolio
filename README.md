@@ -15,7 +15,7 @@ La página de automatización incluye el problema, la solución, el proceso, tec
 
 ## Publicación en Vercel
 
-**Importante:** el sitio publicado actualmente fue desplegado a Vercel por CLI desde otra copia de archivos. Los archivos de la rama `main` de este repositorio **no coinciden con la versión moderna publicada** y los cambios hechos aquí **no se despliegan automáticamente**.
+**Actualización 11/11/2026:** se identificó y usó el proyecto original del portfolio (archivo local proporcionado por Emanuel). Se publicó en producción la página de automatización y se agregó la vinculación de los dos proyectos. **El dominio actual está actualizado en Vercel**. Este repositorio contiene la nueva página y el script de integración, pero todavía no es una copia completa de todos los archivos fuente del despliegue.
 
 Para actualizar la web sin perder su diseño actual:
 
